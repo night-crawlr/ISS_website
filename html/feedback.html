@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <meta charset="utf-8">
+
+<style>
+body{
+
+	background-image:url("../img/background.jpg");
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:cover;
+	background-size:100% 100%;
+}
+.links1 {
+	overflow:hidden;
+}
+
+.links1 a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 2.0vw;
+}
+.links1 a:hover {
+	background-color: #ddd;
+	color: black;
+}
+.sticky{
+	position:fixed;
+	top:0;
+}
+#heading{
+	color:white;
+	font-size:1.0vw;
+	margin-top:15vw;
+}
+
+
+
+table, th, td {
+	margin-top:5.0vw;
+	border: 1px solid white;
+	border-radius:1.0vw;
+		//border-collapse: collapse;
+}
+th, td {
+	padding: 15px;
+	text-align: left;
+	font-size:0.75vw;
+	color:white;
+}
+  #name,#skill,#comment,select{
+	  width: 30%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 0.0vw;
+  margin-bottom: 1vw;
+  resize: vertical;
+}
+  #submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #45a049;
+}
+
+		
+		
+	
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .links1, table,th,td,#grp,.table,#heading,body {
+    width:100%;
+  }
+
+}
+
+</style>
+	<script>
+
+			var i=0;
+var samples;
+var arr = {};var temp = [];
+function show(dropbox){
+	samples=dropbox;
+}
+function addelement() {
+	var name = document.getElementById("name").value;
+	var skill = document.getElementById("skill").value;
+	var level = samples;
+	var enter = level.options[level.selectedIndex].text;
+	var com = document.getElementById("comment").value;	
+	arr.name = name;
+	arr.skill= skill;
+	arr.level = enter;
+	arr.comment= com;	
+
+	temp.push(arr);
+	//console.log(temp[i].name);
+	table.innerHTML+="<tr><td>"+temp[i].name+"</td><td>"+temp[i].skill+"</td><td>"+temp[i].level+"</td><td>"+temp[i].comment+"</td></tr>";
+	i++;
+};
+	</script>
+	</head>
+	<body>
+		<div id="navbar" class="links1">
+			<a href="./index.html">
+				<div class="home">Home</div>
+			</a>
+			<a href="./about.html">
+				<div class="about">About</div>
+			</a>
+			<a href="./contact.html">
+				<div class="contact">Contact</div>
+			</a>
+			<a href="./feedback.html">
+				<div class="feedback">FeedBack</div>
+			</a>
+		</div>
+
+		<h3 id="heading" >RESPONSE SHEET(FEED BACK)</h3>
+		<div id="grp">
+
+			<input type="text" placeholder="Name" class="form" id="name">
+			<br>
+			
+			
+			<input type="text" placeholder="Skill" class="form" id="skill">
+			<br>
+			<select name="skill" id="skill" class="form" onchange="show(this)">
+				<option value selected disabled hidden>Choose Level</option>
+
+				<option value="1">Beginner</option>
+				<option value="2">Intermediate</option>
+				<option value="3">Proficient</option>
+			</select>
+			<br>
+			<input type="text" placeholder="Comment" class="form" id="comment">
+			<br>
+			<button id="submit" type="button" onclick="addelement()">Submit</button>
+			<br>
+		</div>
+		<table id="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Skill</th>
+					<th>Level</th>
+					<th>Comment</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr></tr>
+			</tbody>
+        <script src="../js/index_js.js"></script>
+
+	</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<title>sreehith</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/index_style.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+	</head>
+	<style>
+@media only screen and (max-width:620px) {
+
+	.links1, #name,#result, body {
+		width:100%;
+	}
+
+}
+  @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+
+	</style>
+
+
+	<body class="gadi">
+
+
+		<div id="navbar" class="links1">
+			<a href="./index.html">
+				<div class="home">Home</div>
+			</a>
+			<a href="./about.html">
+				<div class="about">About</div>
+			</a>
+			<a href="./contact.html">
+				<div class="contact">Contact</div>
+			</a>
+			<a href="./feedback.html">
+				<div class="feedback">FeedBack</div>
+			</a>
+		</div>
+
+		<div id="name">This is <br>NARAIN SREEHITH.........</div>
+
+		</div>
+		<div class="container">
+			<p id="result"></p>
+		
+		</div>
+
+		<script src="../js/index_js.js"></script>
+		<div class="count">
+		<script>
+			if (typeof Storage !== "undefined") {
+				if (localStorage.visitcount) {
+					document.getElementById("result").innerHTML =
+						"Welcome back, you've been here " +
+						localStorage.visitcount +
+						" times before.";
+					localStorage.visitcount = Number(localStorage.visitcount) + 1;
+				} else {
+					localStorage.visitcount = 1;
+					document.getElementById("result").innerHTML =
+						"This is your first time here! Welcome.";
+				}
+				// document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+			} else {
+				alert("Sorry, your browser does not support web storage.  Changes will not be saved");
+				document.getElementById("result").innerHTML =
+					"Sorry, your browser does not support web storage...";
+			}
+
+console.log("localstorage visit count now: " + localStorage.visitcount);
+		</script>
+		</div>
+	</body>
+</html>
